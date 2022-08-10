@@ -1,35 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC, useState } from 'react';
 import './App.css';
+import Button from '@mui/material/Button';
+import {
+  Link, Outlet,
+} from 'react-router-dom';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { darkTheme, lightTheme } from './themes/filmder-mui-themes';
 
-function App() {
-  console.log('hello');
+const App: FC = () => {
+  const [light, setLight] = useState(true);
+
   return (
-    <div className="App">
+    <ThemeProvider theme={light ? lightTheme : darkTheme}>
+      <CssBaseline />
 
-      <h1 className="    text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.tsx</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+
+        <h1 onClick={() => { setLight(!light); }} className="    text-3xl font-bold underline">
+          Hello world!
+        </h1>
+        <Button color="primary" variant="contained">Hello World</Button>
+        <Link to="/invoices">Invoices</Link>
+        <Link to="/expenses">Expenses</Link>
+        <Outlet />
+      </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

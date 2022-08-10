@@ -1,17 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import reportWebVitals from "./reportWebVitals";
+/* eslint-disable import/no-unresolved */
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import App from './App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
- root.render(
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="expenses" element={<h1>111</h1>} />
+          <Route path="invoices" element={<h1>222</h1>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
 );
 
 // If you want your app to work offline and load faster, you can change

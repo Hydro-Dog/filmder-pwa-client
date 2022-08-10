@@ -22,6 +22,12 @@ module.exports = {
     'tailwindcss',
   ],
   rules: {
+    'import/extensions': 'off',
+    'no-noninteractive-element-interactions': 'off',
+   'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'import/no-unresolved': 'off',
+    'react/function-component-definition': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'tailwindcss/classnames-order': 'warn',
     'tailwindcss/enforces-negative-arbitrary-values': 'warn',
