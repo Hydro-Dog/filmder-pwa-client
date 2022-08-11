@@ -1,31 +1,16 @@
-import React, { FC, useState } from 'react';
+import React, { FC, Suspense } from 'react';
 import './App.css';
-import Button from '@mui/material/Button';
 import {
-  Link, Outlet,
+  BrowserRouter,
 } from 'react-router-dom';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { darkTheme, lightTheme } from './themes/filmder-mui-themes';
+import AppRouter from './router/AppRouter';
 
-const App: FC = () => {
-  const [light, setLight] = useState(true);
-
-  return (
-    <ThemeProvider theme={light ? lightTheme : darkTheme}>
-      <CssBaseline />
-
-      <div className="App">
-
-        <h1 onClick={() => { setLight(!light); }} className="    text-3xl font-bold underline">
-          Hello world!
-        </h1>
-        <Button color="primary" variant="contained">Hello World</Button>
-        <Link to="/invoices">Invoices</Link>
-        <Link to="/expenses">Expenses</Link>
-        <Outlet />
-      </div>
-    </ThemeProvider>
-  );
-};
+const App: FC = () => (
+  <Suspense fallback={<div>Suspense</div>}>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  </Suspense>
+);
 
 export default App;

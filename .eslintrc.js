@@ -24,7 +24,10 @@ module.exports = {
   rules: {
     'import/extensions': 'off',
     'no-noninteractive-element-interactions': 'off',
-   'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-restricted-exports': 'off',
+    'import/prefer-default-export': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'import/no-unresolved': 'off',
     'react/function-component-definition': 'off',
