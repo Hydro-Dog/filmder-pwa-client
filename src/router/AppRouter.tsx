@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const MainTabs = lazy(() => import('src/main-tabs'));
+const MainTabs = lazy(() => import('src/components/MainTabsPage'));
 
 const AppRouter = () => (
   <Routes>

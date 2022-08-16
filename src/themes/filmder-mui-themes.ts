@@ -4,11 +4,6 @@ import { ThemeOptions, createTheme } from '@mui/material/styles';
 
 const defaultSnippets = createTheme({
   components: {
-    MuiIconButton: {
-      styleOverrides: {
-
-      },
-    },
     MuiSlider: {
       styleOverrides: {
         valueLabel: ({ ownerState, theme }) => ({
@@ -18,6 +13,16 @@ const defaultSnippets = createTheme({
           }),
         }),
       },
+    },
+    MuiButton: {
+      defaultProps: {
+        // disableRipple: true,
+      },
+      // styleOverrides: {
+      //   root: {
+      //     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      //   }
+      // }
     },
   },
 
@@ -64,6 +69,15 @@ export const lightTheme: ThemeOptions = createTheme(defaultSnippets, {
       contrastText: 'rgba(0,0,0,0.7)',
     },
   },
+  components: {
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          color: 'rgba(50,50,50,1)',
+        },
+      },
+    },
+  },
 });
 
 export const darkTheme: ThemeOptions = createTheme(defaultSnippets, {
@@ -72,13 +86,13 @@ export const darkTheme: ThemeOptions = createTheme(defaultSnippets, {
       primary: 'rgba(234,230,220,1)',
     },
     background: {
-      default: '#141414',
-      paper: '#1e1e1e',
+      default: '#383838',
+      paper: '#464646',
     },
     primary: {
-      main: '#aa1639',
-      light: '#A74363',
-      dark: '#660E2A',
+      main: '#B94444',
+      light: '#DA5252',
+      dark: '#8E3636',
     },
     secondary: {
       main: '#aa7b16',
@@ -105,6 +119,15 @@ export const darkTheme: ThemeOptions = createTheme(defaultSnippets, {
       light: '#44BB95',
       dark: '#0F7656',
       contrastText: 'rgba(0,0,0,0.7)',
+    },
+  },
+  components: {
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          color: 'rgba(234,230,220,1)',
+        },
+      },
     },
   },
 });
