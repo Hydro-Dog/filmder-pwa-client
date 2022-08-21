@@ -35,7 +35,7 @@ export const lightTheme: ThemeOptions = createTheme(defaultSnippets, {
     },
     background: {
       default: '#f9eee4',
-      paper: '#efefef',
+      paper: '#fff9f3',
     },
     primary: {
       main: '#aa1639',

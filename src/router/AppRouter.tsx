@@ -1,14 +1,14 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { FilmderRoutes } from './FilmderRoutes';
 
-const MainTabs = lazy(() => import('src/components/MainTabsPage'));
+const MainTabs = lazy(() => import('src/pages/MainPage'));
+const HowToPlayPage = lazy(() => import('src/pages/HowToPlayPage'));
 
 const AppRouter = () => (
   <Routes>
-    <Route path="/" element={<MainTabs />}>
-      <Route path="expenses" element={<h1>111</h1>} />
-      <Route path="invoices" element={<h1>222</h1>} />
-    </Route>
+    <Route path={FilmderRoutes.Root} element={<MainTabs />} />
+    <Route path={FilmderRoutes.HowToPlay} element={<HowToPlayPage />} />
   </Routes>
 );
 

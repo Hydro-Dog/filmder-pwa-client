@@ -1,20 +1,21 @@
 /* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 import { ThemeProvider } from '@emotion/react';
-import { Button, CssBaseline, Switch } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import {
   Component,
   PropsWithChildren,
 } from 'react';
 import { lightTheme, darkTheme } from 'src/themes/filmder-mui-themes';
 import i18n from 'i18next';
-import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
-import WbTwilightRoundedIcon from '@mui/icons-material/WbTwilightRounded';
+import { LanguageWidget } from 'src/widget/LanguageWidget';
+import { DarkThemeWidget } from 'src/widget/DarkThemeWidget';
+import { ScreenSizeWrapper } from '../ScreenSizeWrapper';
 
 const RU = 'ru-RU';
 const EN = 'en-US';
 
-export class GlobalSettingsWrapper extends Component<PropsWithChildren, {light: boolean, lang: string}> {
+export class AppSettingsWrapper extends Component<PropsWithChildren, {light: boolean, lang: string}> {
   constructor(props: PropsWithChildren) {
     super(props);
     const light = localStorage.getItem('lightTheme') === 'true';
@@ -46,16 +47,14 @@ export class GlobalSettingsWrapper extends Component<PropsWithChildren, {light: 
   render() {
     return (
       <ThemeProvider theme={this.state.light ? lightTheme : darkTheme}>
-        <div className="fixed right-0">
-          <Button onClick={() => { this.onLangChange(); }} variant="text">
-            {this.state.lang.split('-')[1]}
-          </Button>
-          <Button onClick={() => { this.onThemeChange(); }} variant="text">
-            {this.state.light ? <WbSunnyRoundedIcon /> : <WbTwilightRoundedIcon /> }
-          </Button>
-        </div>
-        <CssBaseline />
-        {this.props.children}
+        <ScreenSizeWrapper>
+          <div className="h-14 flex items-center justify-end">
+            <LanguageWidget lang={this.state.lang.toUpperCase()} onLangChange={() => this.onLangChange()} />
+            <DarkThemeWidget isLightTheme={this.state.light} onThemeChange={() => { this.onThemeChange(); }} />
+          </div>
+          <CssBaseline />
+          {this.props.children}
+        </ScreenSizeWrapper>
       </ThemeProvider>
     );
   }
