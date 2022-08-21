@@ -1,5 +1,5 @@
 import {
-  Box, Stepper, Typography, Step, StepLabel, Button, Paper,
+  Stepper, Step, StepLabel, Button, Paper,
 } from '@mui/material';
 import { FC, useState } from 'react';
 import { BackButton } from 'src/components/shared/BackButton/BackButton';
@@ -27,7 +27,7 @@ export const HowToPlayPage: FC = () => {
       <BackButton />
 
       <Stepper activeStep={activeStep}>
-        {steps.map((item, index) => (
+        {steps.map((item) => (
           <Step key={item.title}>
             <StepLabel />
           </Step>

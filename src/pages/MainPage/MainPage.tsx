@@ -13,7 +13,7 @@ export const MainPage: FC = () => {
         <div className="m-auto flex flex-col gap-2">
           <Link to={FilmderRoutes.CreateNewGame}>
             <Button
-              style={{ padding: '15px 40px', fontSize: '1.2rem' }}
+              style={{ padding: '15px 40px', fontSize: '1.2rem', width: '100%' }}
               size="large"
               variant="contained"
             >
@@ -22,7 +22,7 @@ export const MainPage: FC = () => {
           </Link>
           <Link to={FilmderRoutes.HowToPlay}>
             <Button
-              style={{ padding: '15px 40px', fontSize: '1.2rem' }}
+              style={{ padding: '15px 40px', fontSize: '1.2rem', width: '100%' }}
               size="large"
             >
               {t('HOW_TO_PLAY')}
