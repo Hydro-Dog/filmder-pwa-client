@@ -16,7 +16,7 @@ const defaultSnippets = createTheme({
     },
     MuiButton: {
       defaultProps: {
-        // disableRipple: true,
+        disableRipple: true,
       },
       // styleOverrides: {
       //   root: {

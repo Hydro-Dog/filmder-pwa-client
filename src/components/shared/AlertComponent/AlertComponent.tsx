@@ -4,22 +4,21 @@ import { useNotificationsStore } from 'src/store/notifications';
 
 export const AlertComponent: FC = () => {
   const notifications = useNotificationsStore((state) => state.notifications);
-  console.log('notifications: ', notifications)
   return (
     <>
       {notifications.map((item) => (
         <Fragment key={item.text}>
-        <Slide direction="down" in mountOnEnter unmountOnExit>
-          <Alert
-            action={(
-              <Button color="inherit" size="small">
-                {item.actionLabel}
-              </Button>
-)}
-          >
-            {item.text}
-          </Alert>
-        </Slide>
+          <Slide direction="down" in mountOnEnter unmountOnExit>
+            <Alert
+              action={(
+                <Button color="inherit" size="small">
+                  {item.actionLabel}
+                </Button>
+                )}
+            >
+              {item.text}
+            </Alert>
+          </Slide>
         </Fragment>
       ))}
     </>

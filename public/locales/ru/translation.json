@@ -1,7 +1,7 @@
 {
   "CORE": {
-    "NEXT": "Next",
-    "BACK": "Back"
+    "NEXT": "Далее",
+    "BACK": "Назад"
   },
   "START_NEW_GAME": "Создать игру",
   "HOW_TO_PLAY": "Как играть",

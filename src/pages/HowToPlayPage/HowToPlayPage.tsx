@@ -23,38 +23,38 @@ export const HowToPlayPage: FC = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
   return (
-    <div>
+    <div className="flex h-full w-full flex-col justify-between">
       <BackButton />
-
-      <Stepper activeStep={activeStep}>
-        {steps.map((item) => (
-          <Step key={item.title}>
-            <StepLabel />
-          </Step>
-        ))}
-      </Stepper>
-
-      <div className="mt-10">
-        <Paper sx={{ margin: '12px' }} elevation={3}>
-          <div className="flex w-full flex-col justify-center gap-3 p-3 text-center">
-            <div className="text-lg font-semibold">{steps[activeStep].title}</div>
-            <div className="">{steps[activeStep].text}</div>
-          </div>
-        </Paper>
-        <div className="absolute bottom-4 flex w-full justify-between px-3">
-          <Button
-            disabled={activeStep === 0}
-            onClick={handleBack}
-          >
-            {t('CORE.BACK')}
-          </Button>
-
-          {activeStep !== steps.length - 1 && (
-            <Button onClick={handleNext}>
-              {t('CORE.NEXT')}
-            </Button>
-          )}
+      <div>
+        <Stepper activeStep={activeStep}>
+          {steps.map((item) => (
+            <Step key={item.title}>
+              <StepLabel />
+            </Step>
+          ))}
+        </Stepper>
+        <div>
+          <Paper sx={{ margin: '12px' }} elevation={3}>
+            <div className="flex w-full flex-col justify-center gap-3 p-3 text-center">
+              <div className="text-lg font-semibold">{steps[activeStep].title}</div>
+              <div className="">{steps[activeStep].text}</div>
+            </div>
+          </Paper>
         </div>
+      </div>
+      <div className="flex w-full justify-between px-3">
+        <Button
+          disabled={activeStep === 0}
+          onClick={handleBack}
+        >
+          {t('CORE.BACK')}
+        </Button>
+
+        {activeStep !== steps.length - 1 && (
+        <Button size="small" onClick={handleNext}>
+          {t('CORE.NEXT')}
+        </Button>
+        )}
       </div>
 
     </div>

@@ -4,7 +4,7 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import AppRouter from './router/AppRouter';
-import { AppSettingsWrapper } from './components/shared/ThemeWrapper';
+import { AppSettingsWrapper } from './ThemeWrapper';
 import { SocketProvider } from './utils/SocketProvider/SocketProvider';
 import { AlertComponent } from './components/shared/AlertComponent/AlertComponent';
 
