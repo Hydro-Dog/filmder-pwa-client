@@ -14,7 +14,7 @@ export const CreateNewGameButton: FC = () => {
         size="large"
         variant="contained"
       >
-        {t('START_NEW_GAME')}
+        {t('MAIN_PAGE.START_NEW_GAME')}
       </Button>
     </Link>
   );

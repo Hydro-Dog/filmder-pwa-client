@@ -12,7 +12,7 @@ export const HowToPlayButton: FC = () => {
         style={{ padding: '15px 40px', fontSize: '1.2rem', width: '100%' }}
         size="large"
       >
-        {t('HOW_TO_PLAY')}
+        {t('MAIN_PAGE.HOW_TO_PLAY')}
       </Button>
     </Link>
   );

@@ -16,3 +16,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fade-away {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .1s, opacity .1s linear;
+}
+
+.fade-away2 {
+  overflow: hidden;
+  transition: height 500ms ease;
+height: 0;
+}
+
+

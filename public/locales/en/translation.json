@@ -3,8 +3,11 @@
     "NEXT": "Next",
     "BACK": "Back"
   },
-  "START_NEW_GAME": "Create game",
-  "HOW_TO_PLAY": "How to play",
+  "MAIN_PAGE" : {
+    "START_NEW_GAME": "Create game",
+    "HOW_TO_PLAY": "How to play"
+  },
+  "YOUR_ID": "Your id",
   "HOW_TO_PLAY_STEPS": {
     "CREATE_GAME_TITLE": "Create game",
     "CREATE_GAME": "Select the movie's category.",

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import ForwardRoundedIcon from '@mui/icons-material/ForwardRounded';
 
-export const BackButton: FC = () => {
+export const FilmderBackButton: FC = () => {
   const navigate = useNavigate();
   const layout = (
     <div className="absolute top-0 rotate-180">

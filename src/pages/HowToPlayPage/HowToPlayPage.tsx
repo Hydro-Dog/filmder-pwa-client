@@ -1,5 +1,5 @@
+import { FilmderBackButton } from 'src/components/shared/FilmderBackButton';
 import { FC, useCallback, useState } from 'react';
-import { BackButton } from 'src/components/shared/BackButton/BackButton';
 import { useTranslation } from 'react-i18next';
 import { StepperHeader } from './components/StepperHeader';
 import { StepCard } from './components/StepCard';
@@ -25,7 +25,7 @@ export const HowToPlayPage: FC = () => {
 
   return (
     <div className="flex h-full w-full flex-col justify-start">
-      <BackButton />
+      <FilmderBackButton />
       <StepperHeader steps={steps} activeStepIndex={activeStepIndex} />
       <StepCard steps={steps} activeStepIndex={activeStepIndex} />
       <StepsNavigation

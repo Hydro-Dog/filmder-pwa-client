@@ -4,14 +4,14 @@ import {
   BrowserRouter,
 } from 'react-router-dom';
 import AppRouter from './router/AppRouter';
-import { AppSettingsWrapper } from './ThemeWrapper';
+import { AppSettingsWrapper } from './utils/ThemeWrapper';
 import { SocketProvider } from './utils/SocketProvider/SocketProvider';
-import { AlertComponent } from './components/shared/FilmderAlertComponent/AlertComponent';
+import { FilmderNotificationComponent } from './components/shared/FilmderNotificationsComponent';
 
 const App: FC = () => (
   <AppSettingsWrapper>
     <SocketProvider />
-    <AlertComponent />
+    <FilmderNotificationComponent />
     <Suspense fallback={<div>Suspense</div>}>
       <BrowserRouter>
         <AppRouter />

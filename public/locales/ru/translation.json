@@ -2,9 +2,12 @@
   "CORE": {
     "NEXT": "Далее",
     "BACK": "Назад"
+  }, 
+  "MAIN_PAGE" : {
+    "START_NEW_GAME": "Создать игру",
+    "HOW_TO_PLAY": "Как играть"
   },
-  "START_NEW_GAME": "Создать игру",
-  "HOW_TO_PLAY": "Как играть",
+  "YOUR_ID": "Ваш id",
   "HOW_TO_PLAY_STEPS": {
     "CREATE_GAME_TITLE": "Создайте игру",
     "CREATE_GAME": "Выберите категорию фильмов, из которых хотите выбирать.",

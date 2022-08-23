@@ -2,9 +2,11 @@
 import create from 'zustand';
 
 export type FilmderNotification = {
+    id: string;
     text: string;
     actionLabel: string;
-    callback: (value?: any) => void
+    actionCallback?: (value?: any) => void;
+    closeCallback?: (value?: any) => void
 }
 
 type NotificationState = {

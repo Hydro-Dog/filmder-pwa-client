@@ -50,13 +50,13 @@ export class AppSettingsWrapper extends Component<PropsWithChildren, {light: boo
       <ThemeProvider theme={this.state.light ? lightTheme : darkTheme}>
         <ScreenSizeWrapper>
           <CssBaseline />
-          <div className="flex flex-col h-screen">
+          <div className="flex h-screen flex-col">
             <div className="flex h-14 items-center justify-end">
               <LanguageWidget lang={this.state.lang.toUpperCase()} onLangChange={() => this.onLangChange()} />
               <DarkThemeWidget isLightTheme={this.state.light} onThemeChange={() => { this.onThemeChange(); }} />
             </div>
-            <div className="h-full">
-                {this.props.children}
+            <div className="h-full relative">
+              {this.props.children}
             </div>
             <div className="flex h-14 items-center justify-end" />
           </div>
