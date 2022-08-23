@@ -6,7 +6,7 @@ import {
 import AppRouter from './router/AppRouter';
 import { AppSettingsWrapper } from './ThemeWrapper';
 import { SocketProvider } from './utils/SocketProvider/SocketProvider';
-import { AlertComponent } from './components/shared/AlertComponent/AlertComponent';
+import { AlertComponent } from './components/shared/FilmderAlertComponent/AlertComponent';
 
 const App: FC = () => (
   <AppSettingsWrapper>

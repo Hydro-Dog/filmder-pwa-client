@@ -1,9 +1,9 @@
-import {
-  Stepper, Step, StepLabel, Button, Paper,
-} from '@mui/material';
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { BackButton } from 'src/components/shared/BackButton/BackButton';
 import { useTranslation } from 'react-i18next';
+import { StepperHeader } from './components/StepperHeader';
+import { StepCard } from './components/StepCard';
+import { StepsNavigation } from './components/StepsNavigation';
 
 export const HowToPlayPage: FC = () => {
   const { t } = useTranslation(['translation']);
@@ -13,49 +13,28 @@ export const HowToPlayPage: FC = () => {
     { title: t('HOW_TO_PLAY_STEPS.SWIPE_FILMS_TITLE'), text: t('HOW_TO_PLAY_STEPS.SWIPE_FILMS') },
     { title: t('HOW_TO_PLAY_STEPS.SEE_RESULTS_TITLE'), text: t('HOW_TO_PLAY_STEPS.SEE_RESULTS') },
   ];
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStepIndex, setActiveStepIndex] = useState(0);
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+  const handleNext = useCallback(() => {
+    setActiveStepIndex((prevActiveStep) => prevActiveStep + 1);
+  }, []);
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  const handleBack = useCallback(() => {
+    setActiveStepIndex((prevActiveStep) => prevActiveStep - 1);
+  }, []);
+
   return (
-    <div className="flex h-full w-full flex-col justify-between">
+    <div className="flex h-full w-full flex-col justify-start">
       <BackButton />
-      <div>
-        <Stepper activeStep={activeStep}>
-          {steps.map((item) => (
-            <Step key={item.title}>
-              <StepLabel />
-            </Step>
-          ))}
-        </Stepper>
-        <div>
-          <Paper sx={{ margin: '12px' }} elevation={3}>
-            <div className="flex w-full flex-col justify-center gap-3 p-3 text-center">
-              <div className="text-lg font-semibold">{steps[activeStep].title}</div>
-              <div className="">{steps[activeStep].text}</div>
-            </div>
-          </Paper>
-        </div>
-      </div>
-      <div className="flex w-full justify-between px-3">
-        <Button
-          disabled={activeStep === 0}
-          onClick={handleBack}
-        >
-          {t('CORE.BACK')}
-        </Button>
-
-        {activeStep !== steps.length - 1 && (
-        <Button size="small" onClick={handleNext}>
-          {t('CORE.NEXT')}
-        </Button>
-        )}
-      </div>
+      <StepperHeader steps={steps} activeStepIndex={activeStepIndex} />
+      <StepCard steps={steps} activeStepIndex={activeStepIndex} />
+      <StepsNavigation
+        classes=""
+        activeStepIndex={activeStepIndex}
+        stepsLength={steps.length}
+        handleBack={handleBack}
+        handleNext={handleNext}
+      />
 
     </div>
   );
