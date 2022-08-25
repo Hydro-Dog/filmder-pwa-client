@@ -1,12 +1,13 @@
 import React, { FC, Suspense } from 'react';
-import './App.css';
+import 'src/App.css';
 import {
   BrowserRouter,
 } from 'react-router-dom';
-import AppRouter from './router/AppRouter';
-import { AppSettingsWrapper } from './utils/ThemeWrapper';
-import { SocketProvider } from './utils/SocketProvider/SocketProvider';
-import { FilmderNotificationComponent } from './components/shared/FilmderNotificationsComponent';
+import { LanguageComponent } from 'src/widget/LanguageComponent';
+import { SocketProvider } from 'src/utils/SocketProvider/SocketProvider';
+import AppRouter from 'src/router/AppRouter';
+import { AppSettingsWrapper } from 'src/utils/ThemeWrapper';
+import { FilmderNotificationComponent } from 'src/components/shared/FilmderNotificationsComponent';
 
 const App: FC = () => (
   <AppSettingsWrapper>
