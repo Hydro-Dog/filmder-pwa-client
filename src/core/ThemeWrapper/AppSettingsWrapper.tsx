@@ -7,14 +7,9 @@ import {
   PropsWithChildren,
 } from 'react';
 import { lightTheme, darkTheme } from 'src/themes/filmder-mui-themes';
-import i18n from 'i18next';
-import { LanguageWidget } from 'src/widget/LanguageWidget';
-import { DarkThemeWidget } from 'src/widget/DarkThemeWidget';
-import { ScreenSizeWrapper } from '../ScreenSizeWrapper';
-import { LanguageComponent } from 'src/widget/LanguageComponent';
-
-const RU = 'ru-RU';
-const EN = 'en-US';
+import { DarkThemeWidget } from 'src/core/ThemeWrapper/components/DarkThemeWidget';
+import { LanguageComponent } from 'src/core/LanguageComponent';
+import { ScreenSizeWrapper } from 'src/core/ScreenSizeWrapper';
 
 export class AppSettingsWrapper extends Component<PropsWithChildren, {light: boolean}> {
   constructor(props: PropsWithChildren) {

@@ -3,10 +3,10 @@ import 'src/App.css';
 import {
   BrowserRouter,
 } from 'react-router-dom';
-import { LanguageComponent } from 'src/widget/LanguageComponent';
-import { SocketProvider } from 'src/utils/SocketProvider/SocketProvider';
+import { LanguageComponent } from 'src/core/LanguageComponent';
+import { SocketProvider } from 'src/core/SocketProvider/SocketProvider';
 import AppRouter from 'src/router/AppRouter';
-import { AppSettingsWrapper } from 'src/utils/ThemeWrapper';
+import { AppSettingsWrapper } from 'src/core/ThemeWrapper';
 import { FilmderNotificationComponent } from 'src/components/shared/FilmderNotificationsComponent';
 
 const App: FC = () => (

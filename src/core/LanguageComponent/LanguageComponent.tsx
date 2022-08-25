@@ -28,11 +28,9 @@ export class LanguageComponent extends Component<PropsWithChildren, { lang: stri
 
   render() {
     return (
-
       <Button onClick={() => { this.onLangChange(); }} variant="text">
         {this.state.lang}
       </Button>
-
     );
   }
 }
